@@ -2,6 +2,8 @@ package com.company;
 
 import java.io.*;
 import java.util.Scanner;
+import java.File;
+import java.FileWriter;
 
 public class Main {
 
@@ -12,11 +14,17 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
+        FileWriter myWriter = new FileWriter("textFile.txt");
+
         System.out.println("Enter number1:");
         int n1 = input.nextInt();
+        myWriter.write(new Integer(n1).toString());
 
         System.out.println("Enter number2:");
         int n2 = input.nextInt();
+        myWriter.write(new Integer(n1).toString());
+
+        myWriter.close();
 
         System.out.println("Which operation do you want to perform(add/sub/mul/div)?");
         String ans = input.next();
